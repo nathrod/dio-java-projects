@@ -1,0 +1,47 @@
+@startuml
+
+Interface MusicPlayer{
++void: playMusic()
++void: pauseMusic()
++void: skipTrack()
++void: goBackTrack()
++void: chooseTrack()
++void: searchMusic(String name)
+}
+
+Interface MobilePhone{
++void: makeCall(String number)
++void: receiveCall(String number)
++void: startVoiceMail()
++void: hangupCall()
+}
+
+Interface Browser{
++void: openURL(String url)
++void: closeURL()
++void addNewTab()
++void refreshPage()
+}
+
+class IPhone{
++void: playMusic() <<override>>
++void: pauseMusic() <<override>>
++void: skipTrack() <<override>>
++void: goBackTrack() <<override>>
++void: chooseTrack() <<override>>
++void: searchMusic(String name) <<override>>
++void: makeCall(String number) <<override>>
++void: receiveCall(String number) <<override>>
++void: startVoiceMail() <<override>>
++void: hangupCall() <<override>>
++void: openURL(String url) <<override>>
++void: closeURL() <<override>>
++void addNewTab() <<override>>
++void refreshPage() <<override>>
+}
+
+Browser <|.. IPhone
+MobilePhone <|.. IPhone
+MusicPlayer <|.. IPhone
+
+@enduml
