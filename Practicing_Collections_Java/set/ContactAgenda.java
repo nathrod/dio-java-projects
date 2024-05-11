@@ -36,15 +36,15 @@ public class ContactAgenda {
         }
     }
 
-    public void updateContactNumber(String name, String newNumber){
-        boolean found = false;
+    public Contact updateContactNumber(String name, String newNumber){
+        Contact contactUpdated = null;
         for(Contact contact : contactSet){
             if(contact.getName().equalsIgnoreCase(name)){
-                found = true;
+                contact.setPhoneNumber(newNumber);
+                contactUpdated = contact;
                 break;
             }
         }
-
-        contact.setPhoneNumber(newNumber);
+        return contactUpdated;
     }
 }
